@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Mdetail from '../components/MDetails';
 
 function Detail() {
     const { id } = useParams();
@@ -24,15 +25,12 @@ function Detail() {
                 {loading ? (
                     'loading...'
                 ) : (
-                    <div>
-                        <h1>{details.title} </h1>
-                        <img src={details.medium_cover_image}></img>
-                        <h2>Rating: {details.rating}</h2>
-                        <h2>Runtime: {details.runtime}</h2>
-                        <h1>
-                            <Link to={`/`}>Home</Link>
-                        </h1>
-                    </div>
+                    <Mdetail
+                        title={details.title}
+                        medium_cover_image={details.medium_cover_image}
+                        rating={details.rating}
+                        runtime={details.runtime}
+                    />
                 )}
             </h2>
         </div>
